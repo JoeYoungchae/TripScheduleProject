@@ -1,1 +1,29 @@
-//¿©Çà ÀÏÁ¤ Ãß°¡¡¤Á¶È¸¡¤¼öÁ¤¡¤»èÁ¦¡¤°Ë»ö
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include "common.h"
+
+void view_schedules(Schedule list[], int count) {
+    int i = 0;
+
+    printf("\n==================== ì—¬í–‰ ì¼ì • ì¡°íšŒ ====================\n");
+
+    if (count == 0) {
+        printf("ë“±ë¡ëœ ì—¬í–‰ ì¼ì •ì´ ì—†ìŠµë‹ˆë‹¤.\n");
+        printf("========================================================\n");
+        return;
+    }
+
+    printf("%-6s %-12s %-8s %-20s %-10s\n", "ë²ˆí˜¸", "ë‚ ì§œ", "ì‹œê°„", "ì¥ì†Œ", "ì˜ˆìƒë¹„ìš©");
+    printf("--------------------------------------------------------\n");
+
+    for (i = 0; i < count; i++) {
+        printf("%-6d %-12s %-8s %-20s %dì›\n",
+               list[i].schedule_id,
+               list[i].date,
+               list[i].time,
+               list[i].place,
+               list[i].estimated_cost);
+    }
+
+    printf("========================================================\n");
+}
